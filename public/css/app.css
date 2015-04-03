@@ -1936,6 +1936,9 @@ blockquote.zalgo {
   line-height: 100px;
   font-family: arial;
   font-size: 16px; }
+  blockquote.zalgo.enraged {
+    margin-top: 50px;
+    line-height: 130px; }
 
 h2 {
   margin-top: 100px; }

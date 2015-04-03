@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "primer-css": "~2.0.3",
-    "octicons": "~2.2.2"
+    "octicons": "~2.2.2",
+    "zeroclipboard": "~2.2.0"
   }
 }
