@@ -40,19 +40,27 @@ T̫̺̳o̬̜ ì̬͎̲̟nv̖̗̻̣̹̕o͖̗̠̜̤k͍͚̹͖̼e̦̗̪͍̪͍ ̬ͅt̕
                     </div>
                 </form>
 
-                <h2>Anger <span class="counter">{{ speaks.enraged | length }} characters</span></h2>
+                <h2>Anger <span class="counter">{{ speaks.enraged | length }} characters</span> <button data-clipboard-target="zalgo-enraged-text" class="btn right copy-button" type="button"><span class="octicon octicon-clippy"></span></button></h2>
                 <hr/>
-                <blockquote class="zalgo">{{ speaks.enraged }}</blockquote>
+                <blockquote id="zalgo-enraged-text" class="zalgo enraged">{{ speaks.enraged }}</blockquote>
 
-                <h2>Calm <span class="counter">{{ speaks.calm | length }} characters</span></h2>
+                <h2>Calm <span class="counter">{{ speaks.calm | length }} characters</span> <button data-clipboard-target="zalgo-calm-text" class="btn right copy-button" type="button"><span class="octicon octicon-clippy"></span></button></h2>
                 <hr/>
-                <blockquote class="zalgo">{{ speaks.calm }}</blockquote>
+                <blockquote id="zalgo-calm-text" class="zalgo">{{ speaks.calm }}</blockquote>
 
-                <h2>Twitter <span class="counter">{{ speaks.twitter | length }} characters</span></h2>
+                <h2>Twitter <span class="counter">{{ speaks.twitter | length }} characters</span> <button data-clipboard-target="zalgo-twitter-text" class="btn right copy-button" type="button"><span class="octicon octicon-clippy"></span></button></h2>
                 <hr/>
-                <blockquote class="zalgo">{{ speaks.twitter }}</blockquote>
+                <blockquote id="zalgo-twitter-text" class="zalgo">{{ speaks.twitter }}</blockquote>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/vendor/ZeroClipboard.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var client = new ZeroClipboard($(".copy-button"));
+        });
+    </script>
 </body>
 </html>
