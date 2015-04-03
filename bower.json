@@ -1,0 +1,21 @@
+{
+  "name": "zalgo.us",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mdwheele/zalgo.us",
+  "authors": [
+    "Dustin Wheeler <mdwheele@ncsu.edu>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "primer-css": "~2.0.3",
+    "octicons": "~2.2.2"
+  }
+}

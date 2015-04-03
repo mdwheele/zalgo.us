@@ -1,0 +1,22 @@
+{
+    "name": "root/zalgo.us",
+    "description": "Zalgo generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dustin Wheeler",
+            "email": "mdwheele@ncsu.edu"
+        }
+    ],
+    "require": {
+        "mdwheele/zalgo": "dev-master",
+        "silex/silex": "~1.2",
+        "twig/twig": "~1.18",
+        "symfony/twig-bridge": "~2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zalgo\\Web\\": "src"
+        }
+    }
+}
