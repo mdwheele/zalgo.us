@@ -1072,7 +1072,7 @@ p.explain {
 .right {
   float: right; }
 
-.left {
+.left, .masthead-logo {
   float: left; }
 
 .text-right {
@@ -1931,5 +1931,25 @@ a.tabnav-extra:hover {
   vertical-align: top; }
 .css-truncate.expandable.zeroclipboard-is-hover .css-truncate-target, .css-truncate.expandable.zeroclipboard-is-hover.css-truncate-target, .css-truncate.expandable:hover .css-truncate-target, .css-truncate.expandable:hover.css-truncate-target {
   max-width: 10000px !important; }
+
+blockquote.zalgo {
+  line-height: 100px;
+  font-family: arial;
+  font-size: 16px; }
+
+h2 {
+  margin-top: 100px; }
+
+form {
+  margin-top: 30px; }
+
+.masthead {
+  font-size: 1rem;
+  padding: 20px 0; }
+  .masthead a {
+    color: #444; }
+
+.masthead-logo {
+  font-size: 2rem; }
 
 /*# sourceMappingURL=app.css.map */

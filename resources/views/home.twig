@@ -6,27 +6,17 @@
 
     <link rel="stylesheet" href="css/app.css"/>
     <link rel="stylesheet" href="css/vendor/octicons.css"/>
-
-    <style>
-        blockquote.zalgo {
-            line-height: 100px;
-            font-family: arial;
-            font-size: 16px;
-        }
-        h2 {
-            margin-top: 100px;
-        }
-        form {
-            margin-top: 30px;
-        }
-    </style>
 </head>
 <body>
+    <a href="https://github.com/mdwheele/zalgo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <div class="container">
+        <header class="masthead">
+            <div class="container">
+                <a class="masthead-logo" href="/">Zalgo</a>
+            </div>
+        </header>
         <div class="columns">
             <div class="four-fifths column">
-                <h1>Zalgo</h1>
-
                 <blockquote>
                     <pre>
 T̫̺̳o̬̜ ì̬͎̲̟nv̖̗̻̣̹̕o͖̗̠̜̤k͍͚̹͖̼e̦̗̪͍̪͍ ̬ͅt̕h̠͙̮͕͓e̱̜̗͙̭ ̥͔̫͙̪͍̣͝ḥi̼̦͈̼v҉̩̟͚̞͎e͈̟̻͙̦̤-m̷̘̝̱í͚̞̦̳n̝̲̯̙̮͞d̴̺̦͕̫ ̗̭̘͎͖r̞͎̜̜͖͎̫͢ep͇r̝̯̝͖͉͎̺e̴s̥e̵̖̳͉͍̩̗n̢͓̪͕̜̰̠̦t̺̞̰i͟n҉̮̦̖̟g̮͍̱̻͍̜̳ ̳c̖̮̙̣̰̠̩h̷̗͍̖͙̭͇͈a̧͎̯̹̲̺̫ó̭̞̜̣̯͕s̶̤̮̩̘.̨̻̪̖͔
@@ -51,12 +41,15 @@ T̫̺̳o̬̜ ì̬͎̲̟nv̖̗̻̣̹̕o͖̗̠̜̤k͍͚̹͖̼e̦̗̪͍̪͍ ̬ͅt̕
                 </form>
 
                 <h2>Anger <span class="counter">{{ speaks.enraged | length }} characters</span></h2>
+                <hr/>
                 <blockquote class="zalgo">{{ speaks.enraged }}</blockquote>
 
                 <h2>Calm <span class="counter">{{ speaks.calm | length }} characters</span></h2>
+                <hr/>
                 <blockquote class="zalgo">{{ speaks.calm }}</blockquote>
 
                 <h2>Twitter <span class="counter">{{ speaks.twitter | length }} characters</span></h2>
+                <hr/>
                 <blockquote class="zalgo">{{ speaks.twitter }}</blockquote>
             </div>
         </div>
