@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use GuzzleHttp\Client;
 use Zalgo\Zalgo;
 use Zalgo\Mood;
 use Zalgo\Soul;
@@ -10,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 $app = new Application();
+
+Dotenv::load(__DIR__ . '/..');
 
 // Services ---
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -26,6 +29,10 @@ $app['zalgo.enraged'] = function ($app) {
 
 $app['zalgo.twitter'] = function ($app) {
     return new Zalgo(new Soul(), Mood::twitter());
+};
+
+$app['guzzle'] = function ($app) {
+    return new GuzzleHttp\Client();
 };
 
 // Routes ---
@@ -57,6 +64,25 @@ $app->post('/api/speak', function (Request $request, Application $app) {
     $message = $request->get('text');
 
     $spokenWord = $app['zalgo.calm']->speaks($message);
+
+    // Slack stuff...
+    if ($request->get('token') === getenv('SLACK_SLASH_CMD_TOKEN')) {
+        $channelName = $request->get('channel_name') ?: 'slack-testing';
+
+        /** @var Client $guzzle */
+        $guzzle = $app['guzzle'];
+
+        $guzzle->post('https://hooks.slack.com/services/' . getenv('SLACK_WEBHOOK_TOKENS'), [
+            'form_params' => [
+                'payload' => json_encode([
+                    'username' => 'Zalgo',
+                    'channel' => '#' . $channelName,
+                    'text' => $spokenWord,
+                    'icon_emoji' => ':ghost:'
+                ])
+            ]
+        ]);
+    }
 
     return new Response($spokenWord);
 });
