@@ -53,6 +53,14 @@ $app->post('/', function (Request $request, Application $app) {
     return $app->render('home.twig', compact('speaks'));
 });
 
+$app->post('/api/speak', function (Request $request, Application $app) {
+    $message = $request->get('text');
+
+    $spokenWord = $app['zalgo.calm']->speaks($message);
+
+    return new Response($spokenWord);
+});
+
 // Error Handling ---
 $app->error(function (\Exception $e, $code) {
     switch ($code) {
